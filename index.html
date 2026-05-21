@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ian Mwangi — Graphic Designer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo" id="nav-name">Ian Mwangi<span>.</span></div>
+  <ul class="nav-links">
+    <li><a href="#portfolio">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="admin-btn" onclick="openAdmin()">Admin</button>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-image"></div>
+  <div class="hero-bg"></div><div class="hero-accent"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Available for work</div>
+    <h1 id="hero-title">Creative<em>Designer.</em></h1>
+    <p id="hero-bio">Crafting visual identities, brand systems, and digital experiences that leave a lasting impression.</p>
+    <div class="hero-cta">
+      <a href="#portfolio" class="btn-primary">View Work</a>
+      <a href="#contact" class="btn-ghost">Get in touch &rarr;</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num" id="stat-years">5+</div><div class="stat-label">Years Exp.</div></div>
+    <div class="stat"><div class="stat-num" id="stat-projects">40+</div><div class="stat-label">Projects</div></div>
+    <div class="stat"><div class="stat-num" id="stat-clients">20+</div><div class="stat-label">Clients</div></div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="section-header"><span class="section-num">01</span><h2 class="section-title">Selected Work</h2></div>
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterPortfolio('All',this)">All</button>
+    <button class="filter-btn" onclick="filterPortfolio('Brand & Corporate Design',this)">Brand &amp; Corporate</button>
+    <button class="filter-btn" onclick="filterPortfolio('Event & Promotional Design',this)">Event &amp; Promo</button>
+    <button class="filter-btn" onclick="filterPortfolio('Social & Lifestyle Events',this)">Social &amp; Lifestyle</button>
+    <button class="filter-btn" onclick="filterPortfolio('Creative & Concept Work',this)">Creative &amp; Concept</button>
+  </div>
+  <div class="portfolio-grid" id="portfolio-grid"><div class="loading-bar"><span class="spinner"></span>Loading projects...</div></div>
+</section>
+
+<section id="about">
+  <div class="section-header"><span class="section-num">02</span><h2 class="section-title">About Me</h2></div>
+  <div class="about-grid">
+    <div class="about-image"><div id="about-img-wrap" class="about-image-placeholder">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      <span style="font-size:0.85rem">Photo coming soon</span>
+    </div></div>
+    <div class="about-text">
+      <h2>Turning ideas into<br>visual stories</h2>
+      <p id="about-para1">I'm a graphic designer passionate about creating meaningful, thoughtful design that connects brands with their audiences.</p>
+      <p id="about-para2">Based in Nairobi, working with clients worldwide. Specialising in brand identity, print, and digital design.</p>
+      <div class="skills-list" id="skills-list">
+        <span class="skill-tag">Brand Identity</span><span class="skill-tag">Typography</span>
+        <span class="skill-tag">Adobe Illustrator</span><span class="skill-tag">Figma</span>
+        <span class="skill-tag">Print Design</span><span class="skill-tag">Motion Graphics</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-header"><span class="section-num">03</span><h2 class="section-title">Get in Touch</h2></div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>Let's work<br>together.</h2>
+      <p>Have a project in mind? I'd love to hear about it.</p>
+      <div class="contact-links">
+        <a class="contact-link" id="contact-email" href="mailto:hello@ianmwangi.com">&#9993; hello@ianmwangi.com</a>
+        <a class="contact-link" id="contact-behance" href="#" target="_blank">&#11043; Behance</a>
+        <a class="contact-link" id="contact-instagram" href="#" target="_blank">&#9672; Instagram</a>
+        <a class="contact-link" id="contact-linkedin" href="#" target="_blank">&#9673; LinkedIn</a>
+      </div>
+    </div>
+    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="form-group"><input placeholder="Your name" type="text" name="name" required></div>
+      <div class="form-group"><input placeholder="Your email" type="email" name="email" required></div>
+      <div class="form-group"><textarea rows="5" placeholder="Tell me about your project..." name="message" required></textarea></div>
+      <button class="btn-primary" type="submit" style="align-self:flex-start;border:none">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p id="footer-name">&copy; 2025 Ian Mwangi. All rights reserved.</p>
+  <p style="color:var(--muted);font-size:0.75rem">Built with care.</p>
+</footer>
+
+<div class="admin-overlay" id="admin-overlay">
+  <div class="admin-panel">
+    <div class="admin-header"><h2>Admin Panel</h2><button class="admin-close" onclick="closeAdmin()">&#x2715;</button></div>
+    <div id="login-screen" class="login-screen">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#e8c547" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <h3>Admin Access</h3>
+      <p style="color:var(--muted);font-size:0.82rem;text-align:center">Enter your password to manage the portfolio</p>
+      <input type="password" id="admin-password" placeholder="enter password" onkeydown="if(event.key==='Enter')checkLogin()">
+      <p class="login-error" id="login-error">Incorrect password</p>
+      <button class="btn-primary" style="border:none;width:200px" onclick="checkLogin()">Unlock</button>
+      <p style="color:rgba(136,136,136,0.5);font-size:0.72rem;margin-top:0.5rem">Default: admin123</p>
+    </div>
+    <div id="admin-dashboard" style="display:none">
+      <div class="admin-tabs">
+        <button class="admin-tab active" onclick="switchTab('projects')">Projects</button>
+        <button class="admin-tab" onclick="switchTab('profile')">Profile</button>
+        <button class="admin-tab" onclick="switchTab('contact')">Contact</button>
+        <button class="admin-tab" onclick="switchTab('settings')">Settings</button>
+      </div>
+      <div class="admin-section active" id="tab-projects">
+        <h3 style="font-family:var(--font-display);margin-bottom:1.2rem;font-size:1rem">Add New Project</h3>
+        <div class="field-group"><label>Project Title</label><input type="text" id="proj-title" placeholder="e.g. Zara Brand Refresh"></div>
+        <div class="field-group">
+          <label>Category</label>
+          <select id="proj-cat" style="background:var(--card);border:1px solid var(--border);color:var(--text);padding:0.75rem 1rem;border-radius:3px;width:100%;font-family:var(--font-body);font-size:0.88rem;outline:none">
+            <option value="Brand & Corporate Design">Brand &amp; Corporate Design</option>
+            <option value="Event & Promotional Design">Event &amp; Promotional Design</option>
+            <option value="Social & Lifestyle Events">Social &amp; Lifestyle Events</option>
+            <option value="Creative & Concept Work">Creative &amp; Concept Work</option>
+          </select>
+        </div>
+        <div class="cat-legend">
+          <div class="cat-legend-item"><span class="dot" style="background:#e8c547"></span>Brand &amp; Corporate</div>
+          <div class="cat-legend-item"><span class="dot" style="background:#c47b3a"></span>Event &amp; Promotional</div>
+          <div class="cat-legend-item"><span class="dot" style="background:#7b9ec4"></span>Social &amp; Lifestyle</div>
+          <div class="cat-legend-item"><span class="dot" style="background:#9c7bc4"></span>Creative &amp; Concept</div>
+        </div>
+        <div class="field-group">
+          <label>Project Image</label>
+          <div class="upload-zone">
+            <input type="file" accept="image/*" id="img-upload" onchange="handleImageUpload(this)">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="opacity:0.4;margin-bottom:0.5rem"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <p>Click to upload or drag &amp; drop</p><small>JPG, PNG, WebP &mdash; max 5MB &mdash; saved to cloud</small>
+          </div>
+          <div id="new-img-preview"></div>
+        </div>
+        <button class="save-btn" id="add-proj-btn" onclick="addProject()">Add Project</button>
+        <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border)">
+          <h3 style="font-family:var(--font-display);margin-bottom:1rem;font-size:1rem">Existing Projects</h3>
+          <div class="projects-list" id="projects-admin-list"><div style="color:var(--muted);font-size:0.85rem;text-align:center;padding:1rem"><span class="spinner"></span> Loading...</div></div>
+        </div>
+      </div>
+      <div class="admin-section" id="tab-profile">
+        <div class="field-group"><label>Display Name</label><input type="text" id="p-name" placeholder="Ian Mwangi"></div>
+        <div class="field-group"><label>Tagline</label><input type="text" id="p-tagline" placeholder="Creative Designer"></div>
+        <div class="field-group"><label>Short Bio (Hero)</label><textarea id="p-bio" rows="3"></textarea></div>
+        <div class="field-group"><label>About Paragraph 1</label><textarea id="p-about1" rows="3"></textarea></div>
+        <div class="field-group"><label>About Paragraph 2</label><textarea id="p-about2" rows="2"></textarea></div>
+        <div class="field-group"><label>Skills (comma-separated)</label><input type="text" id="p-skills" placeholder="Brand Identity, Typography, Figma"></div>
+        <div class="field-group">
+          <label>Profile Photo</label>
+          <div class="upload-zone"><input type="file" accept="image/*" id="profile-photo-input" onchange="handleProfilePhoto(this)"><p>Upload profile photo</p><small>Saved to cloud</small></div>
+          <div id="profile-photo-preview"></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.8rem;margin-bottom:1rem">
+          <div class="field-group"><label>Years Exp.</label><input type="text" id="p-years" placeholder="5+"></div>
+          <div class="field-group"><label>Projects</label><input type="text" id="p-projs" placeholder="40+"></div>
+          <div class="field-group"><label>Clients</label><input type="text" id="p-clients" placeholder="20+"></div>
+        </div>
+        <button class="save-btn" id="save-profile-btn" onclick="saveProfile()">Save Profile</button>
+      </div>
+      <div class="admin-section" id="tab-contact">
+        <div class="field-group"><label>Email Address</label><input type="email" id="c-email" placeholder="hello@ianmwangi.com"></div>
+        <div class="field-group"><label>Behance URL</label><input type="url" id="c-behance" placeholder="https://behance.net/..."></div>
+        <div class="field-group"><label>Instagram Handle</label><input type="text" id="c-instagram" placeholder="@ianmwangi"></div>
+        <div class="field-group"><label>LinkedIn URL</label><input type="url" id="c-linkedin" placeholder="https://linkedin.com/in/..."></div>
+        <button class="save-btn" id="save-contact-btn" onclick="saveContact()">Save Contact Info</button>
+      </div>
+      <div class="admin-section" id="tab-settings">
+        <div class="field-group"><label>Change Admin Password</label><input type="password" id="new-pass" placeholder="New password"></div>
+        <div class="field-group"><label>Confirm New Password</label><input type="password" id="confirm-pass" placeholder="Confirm"></div>
+        <button class="save-btn" onclick="changePassword()">Update Password</button>
+        <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border)">
+          <h3 style="font-family:var(--font-display);font-size:1rem;margin-bottom:0.5rem;color:#e24b4a">Danger Zone</h3>
+          <p style="color:var(--muted);font-size:0.82rem;margin-bottom:1rem">Permanently deletes all projects from the cloud.</p>
+          <button class="save-btn" style="background:#1c1c1c;color:#e24b4a;border:1px solid #e24b4a" onclick="clearAllProjects()">Delete All Projects</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- Lightbox Modal -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="Enlarged view">
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
